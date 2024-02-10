@@ -9,7 +9,7 @@
 
 #' Generates a gene as a random derivation tree.
 #'
-#' @description For a given grammar, \code{xegaGpInitGene} 
+#' @description For a given grammar, \code{xegaGpInitGene()} 
 #'              generates a gene as a random derivation tree
 #'              with a depth-bound.
 #'
@@ -31,7 +31,7 @@
 #' 
 #' @param lF  Local configuration of the genetic algorithm.
 #'
-#' @return A derivation tree.
+#' @return Derivation tree.
 #'
 #' @family Initialization
 #'

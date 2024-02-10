@@ -43,8 +43,8 @@ TournamentSize=xegaSelectGene::parm(2),
 SelectGene=xegaSelectGene::SelectGeneFactory(method="PropFitDiff"),
 SelectMate=xegaSelectGene::SelectGeneFactory(method="Uniform"),
 InitGene=xegaGpInitGene,
-MutateGene=xegaGpMutateGene,
-CrossGene=xegaGpCross2Gene,
+MutateGene=xegaGpMutateAllGene,
+CrossGene=xegaGpFilterCross2Gene,
 DecodeGene=xegaGpDecodeGene,
 EvalGene=xegaSelectGene::EvalGeneFactory(method="EvalGeneU")
 )

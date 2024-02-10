@@ -9,15 +9,15 @@
 
 #' Decode a derivation tree.
 #' 
-#' @description \code{xegaGpDecodeGene} decodes a derivation tree.
+#' @description \code{xegaGpDecodeGene()} decodes a derivation tree.
 #'
 #' @details The recursive algorithm for the decoder is imported 
 #'          from package \code{xegaDerivationTrees}.
 #'
-#' @param gene      A derivation tree.
-#' @param lF        The local configuration of the genetic algorithm.
+#' @param gene      Derivation tree.
+#' @param lF        Local configuration of the genetic algorithm.
 #' 
-#' @return The decoded gene.
+#' @return Decoded gene. Program.
 #'
 #' @family Decoder
 #'

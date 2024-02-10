@@ -7,6 +7,9 @@
 #' \item Decoding of parameters.
 #' \item Mutation functions as well as a function factory for configuration.
 #' \item Crossover functions as well as a function factory for configuration.
+#'       Crossover functions can be restricted by depth or by the non-terminal 
+#'       symbols which are allowed as roots of the subtrees which are exchanged 
+#'       between 2 genes.
 #'       We provide two families of crossover functions:
 #'  \enumerate{
 #' \item Crossover functions with two kids:
@@ -51,8 +54,7 @@
 #'   \itemize{
 #'     \item \code{$f(word, gene, lF)}: 
 #'   Function with a word of a language as first argument
-#'   which returns a gene 
-#'   with evaluated fitness.
+#'   which the fitness of the gene.
 #'   
 #'   } 
 #'
@@ -72,9 +74,10 @@
 #'
 #' \tabular{rcl}{ 
 #' \strong{Constant} \tab \strong{Default} \tab \strong{Used in} \cr 
-#' \code{lF$MaxMutDepth()} \tab 3  \tab xegaGpMutateGene \cr 
-#' \code{lF$MinMutInsertiontDepth()} \tab 3  \tab xegaGpMutateGene \cr 
-#' \code{lF$MaxMutInsertiontDepth()} \tab 4  \tab xegaGpMutateGene \cr 
+#' \code{lF$MaxMutDepth()} \tab 3  \tab xegaGpMutateAllGene(), \cr 
+#'                         \tab 3  \tab xegaGpMutateFilterGene() \cr
+#' \code{lF$MinMutInsertiontDepth()} \tab 3  \tab xegaGpMutateFilterGene() \cr 
+#' \code{lF$MaxMutInsertiontDepth()} \tab 4  \tab xegaGpMutateFilterGene() \cr 
 #' }
 #'
 #' @section Abstract Interface of Crossover Functions:
@@ -84,7 +87,7 @@
 #'
 #'     \code{ListOfTwoGenes<-Crossover2(gene1, gene2, lF)} 
 #'
-#'     \code{newGene<-Crossover(gene1, gene2, lF)}
+#'     \code{ListOfOneGene<-Crossover(gene1, gene2, lF)}
 #'
 #' All local parameters of the crossover function configured are 
 #' expected in the local function list lF.
@@ -93,9 +96,14 @@
 #'
 #' \tabular{rcl}{ 
 #' \strong{Constant} \tab \strong{Default} \tab \strong{Used in} \cr 
-#' \code{lF$MinCrossDepth()} \tab 1  \tab xegaGpCrossGene,  \cr 
-#' \code{lF$MaxCrossDepth()} \tab 7  \tab xegaGpCrossGene,  \cr 
-#' \code{lF$MaxTrials()}     \tab 5  \tab xegaGpCross2Gene  \cr 
+#' \code{lF$MinCrossDepth()} \tab 1  \tab xegaGpFilterCross2Gene(),  \cr 
+#'                           \tab    \tab xegaGpFilterCrossGene(),  \cr 
+#' \code{lF$MaxCrossDepth()} \tab 7  \tab xegaGpFilterCross2Gene(),  \cr 
+#'                           \tab    \tab xegaGpFilterCrossGene(),  \cr 
+#' \code{lF$MaxTrials()}     \tab 5  \tab xegaGpAllCross2Gene()  \cr 
+#'                           \tab    \tab xegaGpAllCrossGene(),  \cr 
+#'                           \tab    \tab xegaGpFilter2CrossGene(),  \cr 
+#'                           \tab    \tab xegaGpFilterCrossGene(),  \cr 
 #' }
 #'
 #' @section The Architecture of the xegaX-Packages:
