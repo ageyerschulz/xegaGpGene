@@ -14,6 +14,7 @@ Description: An implementation of
         complete random derivation tree, decoding of a derivation tree.
         Crossover is implemented by exchanging subtrees. Depth-bounds
         for the minimal and the maximal depth of the roots of the subtrees
+        exchanged by crossover can be set. 
         Mutation is implemented by replacing a subtree by a random subtree. 
         The depth of the random subtree and the insertion node are 
         configurable. For details, 
