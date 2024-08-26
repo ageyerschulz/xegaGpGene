@@ -1,6 +1,6 @@
 Package: xegaGpGene 
 Title: Genetic Operations for Grammar-Based Genetic Programming
-Version: 1.0.0.0
+Version: 1.0.0.1
 Authors@R: 
     person(given = "Andreas",
            family = "Geyer-Schulz",

@@ -53,8 +53,8 @@
 #' A problem environment \code{penv} must provide:
 #'   \itemize{
 #'     \item \code{$f(word, gene, lF)}: 
-#'   Function with a word of a language as first argument
-#'   which the fitness of the gene.
+#'   Function with a word of a language (a program) as first argument
+#'   which computes the fitness of the gene. 
 #'   
 #'   } 
 #'
@@ -65,22 +65,22 @@
 #'     \code{newGene<-Mutate(gene, lF)}
 #'
 #' All local parameters of the mutation function configured are 
-#' expected in the local function list lF.
+#' expected be available in the local function list lF.
 #' 
 #' @section Local Constants of Mutation Functions:
 #'
-#' The local constants of a mutation function determine the 
+#' The local constants of a mutation function determine
 #' the behavior of the function. 
 #'
 #' \tabular{rcl}{ 
 #' \strong{Constant} \tab \strong{Default} \tab \strong{Used in} \cr 
 #' \code{lF$MaxMutDepth()} \tab 3  \tab xegaGpMutateAllGene(), \cr 
 #'                         \tab 3  \tab xegaGpMutateFilterGene() \cr
-#' \code{lF$MinMutInsertiontDepth()} \tab 3  \tab xegaGpMutateFilterGene() \cr 
-#' \code{lF$MaxMutInsertiontDepth()} \tab 4  \tab xegaGpMutateFilterGene() \cr 
+#' \code{lF$MinMutInsertionDepth()} \tab 1  \tab xegaGpMutateFilterGene() \cr 
+#' \code{lF$MaxMutInsertionDepth()} \tab 7  \tab xegaGpMutateFilterGene() \cr 
 #' }
 #'
-#' @section Abstract Interface of Crossover Functions:
+#' @section Abstract Interfaces of Crossover Functions:
 #'
 #' The signatures of the abstract interface to the 2 families 
 #' of crossover functions are:
@@ -90,7 +90,7 @@
 #'     \code{ListOfOneGene<-Crossover(gene1, gene2, lF)}
 #'
 #' All local parameters of the crossover function configured are 
-#' expected in the local function list lF.
+#' expected to be available in the local function list lF.
 #'
 #' @section Local Constants of Crossover Functions:
 #'
@@ -120,13 +120,13 @@
 #' provides a function call interface and configuration support
 #' for several algorithms: genetic algorithms (sga), 
 #' permutation-based genetic algorithms (sgPerm), 
-#' derivation free algorithms as e.g. differential evolution (sgde), 
+#' derivation-free algorithms as e.g. differential evolution (sgde), 
 #' grammar-based genetic programming (sgp) and grammatical evolution
 #' (sge). 
 #'
 #' \item
 #' The population layer (package \code{xegaPopulation}) contains
-#' population related functionality as well as support for 
+#' population-related functionality as well as support for 
 #' population statistics dependent adaptive mechanisms and parallelization.
 #'
 #' \item 
@@ -134,15 +134,15 @@
 #' a representation dependent part:
 #' \enumerate{
 #' \item 
-#'  The representation indendent part (package \code{xegaSelectGene})
+#'  The representation-indendent part (package \code{xegaSelectGene})
 #'  is responsible for variants of selection operators, evaluation 
 #'  strategies for genes, as well as profiling and timing capabilities.        
 #' \item 
-#'  The representation dependent part consists of the following packages: 
+#'  The representation-dependent part consists of the following packages: 
 #' \itemize{
 #' \item \code{xegaGaGene} for binary coded genetic algorithms.
 #' \item \code{xegaPermGene} for permutation-based genetic algorithms.
-#' \item \code{xegaDfGene} for derivation free algorithms as e.g. 
+#' \item \code{xegaDfGene} for derivation-free algorithms as e.g. 
 #'                         differential evolution.
 #' \item \code{xegaGpGene} for grammar-based genetic algorithms.
 #' \item \code{xegaGeGene} for grammatical evolution algorithms.
@@ -150,7 +150,7 @@
 #' The packages \code{xegaDerivationTrees} and \code{xegaBNF} support
 #' the last two packages:
 #' \code{xegaBNF} essentially provides a grammar compiler and 
-#' \code{xegaDerivationTrees} an abstract data type for derivation trees.
+#' \code{xegaDerivationTrees} is an abstract data type for derivation trees.
 #' }} 
 #'
 #' @family Package Description

@@ -2,14 +2,15 @@
 #' Prints a random example of crossover for a crossover method given 
 #' a random number seed. 
 #'
-#' @description The purpose of this function is to support the search 
-#'              for examples for generating unit tests for crossover 
+#' @description The function supports the search 
+#'              for examples for unit tests for crossover 
 #'              functions whose behavior depends on random numbers.
 #'
 #' @param  FUN        String. Specification of crossover method.
 #' @param  s          Integer. Seed of random number generator. 
 #' @param  verbose    Boolean. 
-#'                    If \code{TRUE} (default), print example to console. 
+#'                    If \code{TRUE} (default), print the example 
+#'                    to the console. 
 #'
 #' @return No return.
 #'

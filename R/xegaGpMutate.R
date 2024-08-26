@@ -12,14 +12,14 @@
 #' @description \code{xegaGpMutateAllGene()} 
 #'               replaces a randomly selected subtree by
 #'               a random derivation tree with the same root symbol 
-#'               with small probability.
+#'               with a small probability.
 #'               All non-terminal nodes are considered as insertion points.
 #'               Depth-bounds are respected.
 #'
 #' @details  Mutation is controlled by one local parameter: 
 #'           \enumerate{
 #'            \item \code{lF$MaxMutDepth()} controls the maximal depth of 
-#'                  of the new random generation tree.
+#'                  the new random generation tree.
 #'           }
 #'           This version of the genetic operator skips the filter loop.
 #'
@@ -57,7 +57,7 @@ xegaGpMutateAllGene<-function(g, lF)
 #' @description \code{xegaGpMutateGeneFilter()} replaces 
 #'              a randomly selected subtree by
 #'              a random derivation tree with the same root symbol 
-#'              with small probability.
+#'              with a small probability.
 #'              Only non-terminal nodes with a depth
 #'              between \code{lF$MinMutInsertionDepth()} and
 #'              \code{lF$MaxMutInsertionDepth()} are considered 
@@ -67,7 +67,7 @@ xegaGpMutateAllGene<-function(g, lF)
 #' @details  Mutation is controlled by three local parameters: 
 #'           \enumerate{
 #'            \item \code{lF$MaxMutDepth()} controls the maximal depth of 
-#'                  of the new random generation tree.
+#'                  the new random generation tree.
 #'            \item \code{lF$MinMutInsertionDepth()} and 
 #'                  \code{lF$MaxMutInsertionDepth()} control the possible 
 #'                  insertion points for the new random derivation tree.

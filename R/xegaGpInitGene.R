@@ -14,26 +14,32 @@
 #'              with a depth-bound.
 #'
 #' @details In the derivation tree representation of 
-#'          package \code{xegaGp}, \emph{gene} is a list with 
+#'          package \code{xegaGpGene}, a \emph{gene} is a list with 
 #'          \enumerate{
-#'          \item \code{$evaluated}: Boolean: TRUE if the fitness is known.
+#'          \item \code{$gene1}:     a derivation tree.
 #'          \item \code{$fit}:       The fitness of the genotype of 
 #'                                  \code{$gene1}         
-#'          \item \code{$gene1}:     a derivation tree.
+#'          \item \code{$evaluated}: Boolean: TRUE if the fitness is known.
+#'          \item \code{$evalFail}:   Has the evaluation of the gene failed?
+#'    \item \code{$var}:        The cumulative variance of the fitness 
+#'                      of all evaluations of a gene.
+#'                      (For stochastic functions)
+#'    \item \code{$sigma}:      The standard deviation of the fitness of 
+#'                      all evaluations of a gene.
+#'                      (For stochastic functions)
+#'    \item \code{$obs}:        The number of evaluations of a gene.
+#'                      (For stochastic functions)
 #'          }
-#'
-#'          This representation makes implementation of several 
-#'          code optimizations and generalizations easier.
 #'
 #'          The algorithm for generating a complete derivation tree 
 #'          with a depth-bound
-#'          is imported from package \code{xegaDerivationTrees}. 
+#'          is imported from the package \code{xegaDerivationTrees}. 
 #' 
 #' @param lF  Local configuration of the genetic algorithm.
 #'
 #' @return Derivation tree.
 #'
-#' @family Initialization
+#' @family Gene Generation
 #'
 #' @examples
 #' gene<-xegaGpInitGene(lFxegaGpGene)

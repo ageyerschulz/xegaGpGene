@@ -12,7 +12,7 @@
 #' @description \code{xegaGpFilterCross2Gene()} swaps two randomly extracted 
 #'              subtrees between 2 genes. Subtrees must have the same
 #'              root in order to be compatible. The current implementation 
-#'              performs at most \code{maxtrials} trials to find compatible
+#'              performs at most \code{lF$MaxTrials()} trials to find compatible
 #'              subtrees. If this fails, the original genes are returned.
 #'              Only nodes with a depth
 #'              between \code{lF$MinMutInsertionDepth()} and
@@ -90,12 +90,12 @@ rg[[2]]<-ng2
 return(rg)
 }
 
-#' Crossover of 2 derivation tree genes
+#' Crossover of 2 derivation tree genes.
 #'
 #' @description \code{xegaGpAllCross2Gene()} swaps two randomly extracted 
 #'              subtrees between 2 genes. Subtrees must have the same
 #'              root in order to be compatible. The current implementation 
-#'              performs at most \code{maxtrials} trials to find compatible
+#'              performs at most \code{lF$MaxTrials()} trials to find compatible
 #'              subtrees. If this fails, the original genes are returned.
 #'
 #' @details Crossover is controlled by one local parameter:
@@ -223,7 +223,7 @@ return(rg)
 #' @description \code{xegaGpFilterCrossGene()} swaps two randomly extracted 
 #'              subtrees between 2 genes. Subtrees must have the same
 #'              root in order to be compatible. The current implementation 
-#'              performs at most \code{lF$maxtrials()} 
+#'              performs at most \code{lF$MaxTrials()} 
 #'              attempts to find compatible
 #'              subtrees. If this fails, the original gene is returned.
 #'              Only nodes with a depth
