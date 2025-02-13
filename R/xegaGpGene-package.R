@@ -164,5 +164,4 @@
 #' @section License: MIT
 #' @section URL: <https://github.com/ageyerschulz/xegaGpGene>
 #' @section Installation: From CRAN by \code{install.packages('xegaGpGene')}
-NULL
-
+"_PACKAGE"
