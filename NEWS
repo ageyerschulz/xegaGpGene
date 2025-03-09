@@ -4,5 +4,11 @@
 
 Version 1.0.0.1 (2024-03-05)
 
-- Multiple improvements in the domentation of functions.
+- Multiple improvements in the documentation of functions.
+
+Version 1.0.0.2 (2025-03-09)
+
+- xegaGpInitGeneGe()  Generates a complete derivation tree from 
+                    a random vector of integers.
+- xegaGpInitGeneFactory()  for selecting  the initialization function.
 

@@ -52,7 +52,7 @@ b<-xegaGpDecodeGene(gene[[1]], lFxegaGpGene)
 
 test_that("xegaGpAllCrossGene OK", 
 {
- set.seed(17)
+ set.seed(19)
 gene1<-xegaGpInitGene(lFxegaGpGene)
 gene2<-xegaGpInitGene(lFxegaGpGene)
 gene<-xegaGpAllCrossGene(gene1, gene2, lFxegaGpGene)

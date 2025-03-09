@@ -1,27 +1,28 @@
 
 library(testthat)
-library(xegaSelectGene)
 library(xegaGpGene)
 
 test_that("xegaGpMutateAllGene OK", 
 {
- set.seed(21)
+set.seed(21)
 gene1<-xegaGpInitGene(lFxegaGpGene)
-a<-xegaGpDecodeGene(gene1, lFxegaGpGene)
+set.seed(2)
 gene<-xegaGpMutateAllGene(gene1, lFxegaGpGene)
+a<-xegaGpDecodeGene(gene1, lFxegaGpGene)
 b<-xegaGpDecodeGene(gene, lFxegaGpGene)
- expect_identical(identical(a, b), FALSE)
+expect_identical(identical(a, b), FALSE)
 }
 )
 
 test_that("xegaGpMutateFilterGene OK", 
 {
- set.seed(21)
-gene1<-xegaGpInitGene(lFxegaGpGene)
-a<-xegaGpDecodeGene(gene1, lFxegaGpGene)
-gene<-xegaGpMutateFilterGene(gene1, lFxegaGpGene)
-b<-xegaGpDecodeGene(gene, lFxegaGpGene)
- expect_identical(identical(a, b), FALSE)
+set.seed(20)
+agene<-xegaGpInitGene(lFxegaGpGene)
+set.seed(2)
+bgene<-xegaGpMutateFilterGene(agene, lFxegaGpGene)
+a<-xegaGpDecodeGene(agene, lFxegaGpGene)
+b<-xegaGpDecodeGene(bgene, lFxegaGpGene)
+expect_identical(identical(a, b), FALSE)
 }
 )
 

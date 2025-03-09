@@ -50,6 +50,7 @@ xegaGpMutateAllGene<-function(g, lF)
   mutgene<-xegaDerivationTrees::randomDerivationTree(
     node$ID, lF$Grammar, min(lF$MaxMutDepth(),node$Rdepth))
   newgene<-xegaDerivationTrees::treeInsert(gene, mutgene, node)
+  a<-newgene
   return(list(evaluated=FALSE, fit=0, gene1=newgene)) }
 
 #' Mutate a gene (with a node filter)
@@ -107,6 +108,7 @@ xegaGpMutateFilterGene<-function(g, lF)
   mutgene<-xegaDerivationTrees::randomDerivationTree(
     node$ID, lF$Grammar, min(lF$MaxMutDepth(),node$Rdepth))
   newgene<-xegaDerivationTrees::treeInsert(gene, mutgene, node)
+  a<-newgene
   return(list(evaluated=FALSE, fit=0, gene1=newgene)) }
 
 #' Configure the mutation function of a genetic algorithm.
